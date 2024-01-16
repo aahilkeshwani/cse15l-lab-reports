@@ -16,12 +16,8 @@ In this example, the working directory at the time of the command was `/home`. A
     
 Next, here is an example using `cd` with no arguments:
 
-
-    ```
     [user@sahara ~/lecture1/messages]$ cd
     [user@sahara ~]$
-    ```
-
     
 In this example, the working directory at the time of the command was `/home/lecture1/messages/`. After I called the command without an argument, the working directory was changed to /home/. 
 
