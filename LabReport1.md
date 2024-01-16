@@ -5,11 +5,10 @@ In this lab, we learned about commands `cd`, `ls` and `cat`. We learned how to u
 
 `cd` - Change Directory - Switches the current working directory to a given path.
     First here is an example using `cd` with a path to a directory as an argument: 
+    
 
-    ```
     [user@sahara ~]$ cd lecture1/messages
     [user@sahara ~/lecture1/messages]$
-    ```
 
 
 In this example, the working directory at the time of the command was `/home`. After I called the command the output showed the new working     directory changed from calling `cd`. 
