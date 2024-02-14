@@ -1,6 +1,6 @@
-Lab Report 2! - Bugs and Commands (week 5)
+Lab Report 3! - Bugs and Commands (week 5)
 Part 1 - Bugs
-In week 4's lab we learned about debugging and testing methods. In this lab report, I will be addressing issues from the `reverseInPlace` method.
+In week 4's lab, we learned about debugging and testing methods. In this lab report, I will be addressing issues from the `reverseInPlace` method.
 The following test input induces a failure:
 ```
 @Test
@@ -55,3 +55,9 @@ grep -c ".txt" find-results.txt
 252
 ```
 The example above shows using `grep` to find the number of `.txt` files in the `technical` directory. The first line uses the `find` command to create a `.txt` file containing all the files and directories in `technical`. Then we use `grep` with the `-c` option to find the number of `.txt` files in `technical`. This is useful especially since it only took two lines of code. 
+```
+grep -c "flight" technical/911report/chapter-1.txt
+74
+```
+This example shows how to call `grep` with the `-c` option on a file itself. Here, we call it on `chapter-1.txt` in the `911report` directory. `grep` reads through `chapter-1.txt` and returns the number of times "flight" appears in the text.
+Next, the 
