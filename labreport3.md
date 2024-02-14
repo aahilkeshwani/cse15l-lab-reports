@@ -86,3 +86,31 @@ technical//biomed
 technical//911report
 ```
 In this example, we use `-v` in a similar way. First, we put our results from the previous example into a text file called `notxt-results.txt`. Then we use `grep` and `-v` to filter out all lines with `government`. This leaves us with 4 directories that are unrelated to government. 
+Another useful option for the `grep` command is the `-e` option which allows you to filter multiple strings or expressions. In the following example I am using the same text file I created in the last example, `notxt-results.txt`.
+```
+grep -e "government" -e "biomed" notxt-results.txt
+technical//government
+technical//government/About_LSC
+technical//government/Env_Prot_Agen
+technical//government/Alcohol_Problems
+technical//government/Gen_Account_Office
+technical//government/Post_Rate_Comm
+technical//government/Media
+technical//biomed
+```
+Here, we are filtering all lines that contain either `government` or `biomed`. This is very useful to be able to find files that contain certain keywords. 
+Finally `-An`, where n is an integer, outputs n-lines after the line containing the specified string. In the following example I will again use the `notxt-results.txt` file. 
+```
+grep -A1 "technical//plos" notxt-results.txt
+technical//plos
+technical//biomed
+```
+In this example, I used the `-An` option to find the line after `technical//plos`. The usefulness of this command isn't super obvious now but, we can use this command in files with code to debug iterators. For example:
+```
+grep -A2 "for(File f: paths)" DocSearchServer.java
+               for(File f: paths) {
+                   if(FileHelpers.readFile(f).contains(parameters[1])) {
+                       foundPaths.add(f.toString());
+```
+In the above example, I show how we can use the same command option to find the contents of a for loop. This is very useful because if you think you have an error in one of your for loops you can use `grep` and the `-A` option to print out lines after the for loop, where the error most likely resides.
+All the research for part 2 of this lab report used the following source: https://www.geeksforgeeks.org/grep-command-in-unixlinux/
