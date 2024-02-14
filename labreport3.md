@@ -52,7 +52,7 @@ The `-c` option prints out the number of lines matching the pattern instead of t
 ```
 find technical/ > find-results.txt
 grep -c ".txt" find-results.txt
-252
+1391
 ```
 The example above shows using `grep` to find the number of `.txt` files in the `technical` directory. The first line uses the `find` command to create a `.txt` file containing all the files and directories in `technical`. Then we use `grep` with the `-c` option to find the number of `.txt` files in `technical`. This is useful especially since it only took two lines of code. 
 ```
@@ -60,4 +60,29 @@ grep -c "flight" technical/911report/chapter-1.txt
 74
 ```
 This example shows how to call `grep` with the `-c` option on a file itself. Here, we call it on `chapter-1.txt` in the `911report` directory. `grep` reads through `chapter-1.txt` and returns the number of times "flight" appears in the text.
-Next, the 
+Next, the `-v` option for the `grep` command filters all lines that don't have the specified string. For example:
+```
+find technical/ > find-results.txt
+grep -v ".txt" find-results.txt
+technical/
+technical//government
+technical//government/About_LSC
+technical//government/Env_Prot_Agen
+technical//government/Alcohol_Problems
+technical//government/Gen_Account_Office
+technical//government/Post_Rate_Comm
+technical//government/Media
+technical//plos
+technical//biomed
+technical//911report
+```
+In the example above, we first put all files and directories under `technical/` in a txt file `find-results.txt`. We then use `grep` and `-v` to find all lines in `find-results.txt` that don't contain ".txt". Thus we filter out all text files and are left with directories. This is an easy way to find all directories in the current directory. 
+```
+grep -v ".txt" find-results.txt > notxt-results.txt
+grep -v "government" notxt-results.txt
+technical/
+technical//plos
+technical//biomed
+technical//911report
+```
+In this example, we use `-v` in a similar way. First, we put our results from the previous example into a text file called `notxt-results.txt`. Then we use `grep` and `-v` to filter out all lines with `government`. This leaves us with 4 directories that are unrelated to government. 
