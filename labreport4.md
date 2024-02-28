@@ -17,7 +17,11 @@ Seeing that `ListExamples.java` is contained in our current directory, we can no
 <img width="881" alt="Screen Shot 2024-02-27 at 9 25 54 PM" src="https://github.com/aahilkeshwani/cse15l-lab-reports/assets/156363135/1ee285b9-db48-4662-9a8b-9fbc8bf799f7">
 
 The error we want to fix exists 43 lines below where our cursor is initially. So we type `43j e x i 2 <esc> :wq <enter>`. Here, `43j` moves our cursor down 43 lines of code. Next `e` moves our cursor to the end of the first word in the line. The first word in the ine in this case is `index1`, which is causing the error since it should be `index2` instead. Then the `x` deletes the 1 in `index1`. `i` allows us to insert text into the file, which then we insert 2. Finally `:wq <enter.` saves our changes and quits `vim`. We are left with the following:
+
 <img width="593" alt="Screen Shot 2024-02-27 at 9 34 33 PM" src="https://github.com/aahilkeshwani/cse15l-lab-reports/assets/156363135/0df21d5f-8d6f-4607-b072-96794b913bf8">
+
 To see if our changes fixed the error I type `<up> <up> <enter>` to run `bash test.sh` one more time. We get the following:
+
 <img width="363" alt="Screen Shot 2024-02-27 at 9 42 03 PM" src="https://github.com/aahilkeshwani/cse15l-lab-reports/assets/156363135/a1cb14e7-0871-4961-8c49-139eed78179d">
+
 As you can see we have successfully edited and fixed an error in a java file straight from the command line using vim!
